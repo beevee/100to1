@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link type="text/css" rel="stylesheet" href="/static/font/material-design-icons/material-icons.css"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Сто к одному</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <p class="flow-text">{{ $.question.Text }}</p>
+      {{ if eq $.controls "vih" }}
+        <ul class="collection">
+          {{ range $i, $e := $.question.Answers }}
+            <li class="collection-item">{{ $e.Text }} <span class="right">{{ $e.Votes }}</span></li>
+          {{ end }}
+        </ul>
+        <a class="waves-effect waves-light btn" href="/play/vih/shiftquestion/prev"><i class="material-icons left">fast_rewind</i>предыдущий</a>
+        <a class="waves-effect waves-light btn" href="/play/vih"><i class="material-icons left">repeat</i>обновить</a>
+        <a class="waves-effect waves-light btn" href="/play/vih/shiftquestion/next"><i class="material-icons left">fast_forward</i>следующий</a>
+      {{ else }}
+        <div class="collection">
+          {{ range $i, $e := $.question.Answers }}
+            <a href="/play/user/setanswer/{{ $.currentQuestionIndex }}/{{ $i }}" class="collection-item {{ if eq $i $.currentAnswerIndex }}active{{ end }}">{{ $e.Text }}</a>
+          {{ end }}
+        </div>
+        <a class="waves-effect waves-light btn" href="/play/user"><i class="material-icons left">repeat</i>дальше</a>
+      {{ end }}
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/static/js/materialize.min.js"></script>
+  </body>
+</html>

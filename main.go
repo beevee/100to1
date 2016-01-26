@@ -127,7 +127,7 @@ func init() {
 			},
 		},
 		question{
-			Text: "Зачем ты приехал на змш?",
+			Text: "Зачем ты приехал на ЗМШ?",
 			Answers: []answer{
 				answer{Text: "За мальчиком"},
 				answer{Text: "За девочкой"},
@@ -138,7 +138,7 @@ func init() {
 			},
 		},
 		question{
-			Text: "Что вы взяли с собой на зимнюю школу?",
+			Text: "Что вы взяли с собой на Зимнюю школу?",
 			Answers: []answer{
 				answer{Text: "Упаковку предохранителей"},
 				answer{Text: "Горячительное"},
@@ -149,7 +149,7 @@ func init() {
 			},
 		},
 		question{
-			Text: "Кто является работником зимней школы?",
+			Text: "Кто является работником Зимней школы?",
 			Answers: []answer{
 				answer{Text: "Мамы"},
 				answer{Text: "Шур"},
